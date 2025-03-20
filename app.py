@@ -24,9 +24,16 @@ import warnings
 import sys
 import time
 
-# Download required NLTK data
-nltk.download('punkt')
-nltk.download('stopwords')
+# Suppress warnings
+warnings.filterwarnings('ignore')
+
+# Download required NLTK data with error handling
+try:
+    nltk.download('punkt', quiet=True)
+    nltk.download('stopwords', quiet=True)
+except Exception as e:
+    st.error(f"Error downloading NLTK data: {str(e)}")
+    st.info("Some features may be limited. Please try refreshing the page.")
 
 # Load environment variables
 load_dotenv()
@@ -38,8 +45,12 @@ st.set_page_config(
     layout="wide"
 )
 
-# Initialize sentiment analyzers
-vader = SentimentIntensityAnalyzer()
+# Initialize sentiment analyzers with error handling
+try:
+    vader = SentimentIntensityAnalyzer()
+except Exception as e:
+    st.error(f"Error initializing sentiment analyzer: {str(e)}")
+    vader = None
 
 def create_sample_data():
     """Create sample data for demonstration"""
@@ -137,6 +148,9 @@ def calculate_technical_indicators(df):
 def analyze_sentiment(text):
     """Analyze sentiment using VADER and TextBlob"""
     try:
+        if vader is None:
+            return None
+            
         # VADER sentiment
         vader_sentiment = vader.polarity_scores(text)
         
