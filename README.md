@@ -1,6 +1,6 @@
 # Advanced Financial Analytics Dashboard
 
-Check out the project -> https://app-markets-dashboard-swym4acvq5mfrakmdbagjp.streamlit.app
+Check out my project! -> https://app-markets-dashboard-swym4acvq5mfrakmdbagjp.streamlit.app
 
 A financial analytics platform leveraging machine learning, technical analysis, and sentiment analysis to provide comprehensive market insights. Built with Python and modern data science tools.
 
