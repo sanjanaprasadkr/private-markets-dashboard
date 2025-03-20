@@ -6,10 +6,12 @@ A financial analytics platform leveraging machine learning, technical analysis, 
 
 ### Advanced Analytics
 - **Real-time Market Data Processing**: Efficient data pipeline using yfinance API
-- **Technical Analysis Suite**: 
+
+- **Technical Analysis**: 
   - RSI, MACD, Bollinger Bands, OBV indicators
   - Custom technical indicator calculations
   - Interactive visualization with Plotly
+  
 - **Machine Learning Integration**:
   - Random Forest-based price prediction
   - Feature importance analysis
@@ -21,10 +23,12 @@ A financial analytics platform leveraging machine learning, technical analysis, 
   - VADER (Rule-based)
   - TextBlob (Machine Learning)
   - Combined sentiment scoring
+    
 - **Statistical Analysis**:
   - Volatility calculations
   - Trend analysis
   - Market regime detection
+    
 - **Feature Engineering**:
   - Technical indicator generation
   - Market regime features
@@ -37,22 +41,6 @@ A financial analytics platform leveraging machine learning, technical analysis, 
 - **Visualization**: Plotly, Seaborn
 - **API Integration**: yfinance
 - **Natural Language Processing**: NLTK, TextBlob, VADER
-
-### Key Components
-1. **Data Pipeline**
-   - Efficient data fetching with retry mechanisms
-   - Real-time data validation
-   - Automated data cleaning
-
-2. **Analysis Engine**
-   - Multi-factor technical analysis
-   - Machine learning prediction models
-   - Sentiment analysis pipeline
-
-3. **Visualization System**
-   - Interactive charts
-   - Real-time metrics
-   - Custom technical indicators
 
 ## 🚀 Getting Started
 
