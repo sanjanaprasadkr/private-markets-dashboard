@@ -1,6 +1,6 @@
 # Advanced Financial Analytics Dashboard
 
-A sophisticated financial analytics platform leveraging machine learning, technical analysis, and sentiment analysis to provide comprehensive market insights. Built with Python and modern data science tools.
+A financial analytics platform leveraging machine learning, technical analysis, and sentiment analysis to provide comprehensive market insights. Built with Python and modern data science tools.
 
 ## 🚀 Key Features
 
