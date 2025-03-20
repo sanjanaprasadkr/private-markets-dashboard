@@ -111,26 +111,6 @@ streamlit run app.py
 - NLP: nltk, textblob, vaderSentiment
 - Web: streamlit
 
-## 🎯 Future Enhancements
-
-1. **Technical Improvements**
-   - Advanced ML model integration
-   - Real-time sentiment analysis
-   - Enhanced visualization options
-
-2. **Feature Additions**
-   - Portfolio optimization
-   - Risk management tools
-   - Custom technical indicators
-
-3. **Performance Optimization**
-   - Caching mechanisms
-   - Parallel processing
-   - API rate limiting
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📝 Notes
 
