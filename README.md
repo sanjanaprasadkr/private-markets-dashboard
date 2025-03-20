@@ -1,15 +1,17 @@
 # Advanced Financial Analytics Dashboard
 
-A sophisticated financial analytics platform leveraging machine learning, technical analysis, and sentiment analysis to provide comprehensive market insights. Built with Python and modern data science tools.
+A financial analytics platform leveraging machine learning, technical analysis, and sentiment analysis to provide comprehensive market insights. Built with Python and modern data science tools.
 
 ## 🚀 Key Features
 
 ### Advanced Analytics
 - **Real-time Market Data Processing**: Efficient data pipeline using yfinance API
-- **Technical Analysis Suite**: 
+
+- **Technical Analysis**: 
   - RSI, MACD, Bollinger Bands, OBV indicators
   - Custom technical indicator calculations
   - Interactive visualization with Plotly
+  
 - **Machine Learning Integration**:
   - Random Forest-based price prediction
   - Feature importance analysis
@@ -21,10 +23,12 @@ A sophisticated financial analytics platform leveraging machine learning, techni
   - VADER (Rule-based)
   - TextBlob (Machine Learning)
   - Combined sentiment scoring
+    
 - **Statistical Analysis**:
   - Volatility calculations
   - Trend analysis
   - Market regime detection
+    
 - **Feature Engineering**:
   - Technical indicator generation
   - Market regime features
@@ -37,38 +41,6 @@ A sophisticated financial analytics platform leveraging machine learning, techni
 - **Visualization**: Plotly, Seaborn
 - **API Integration**: yfinance
 - **Natural Language Processing**: NLTK, TextBlob, VADER
-
-## 🛠️ Technical Implementation
-
-### Architecture
-```
-├── Data Collection Layer
-│   ├── Real-time market data fetching
-│   └── Data validation and cleaning
-├── Analysis Layer
-│   ├── Technical indicators
-│   ├── Machine learning models
-│   └── Sentiment analysis
-└── Presentation Layer
-    ├── Interactive visualizations
-    └── Real-time metrics
-```
-
-### Key Components
-1. **Data Pipeline**
-   - Efficient data fetching with retry mechanisms
-   - Real-time data validation
-   - Automated data cleaning
-
-2. **Analysis Engine**
-   - Multi-factor technical analysis
-   - Machine learning prediction models
-   - Sentiment analysis pipeline
-
-3. **Visualization System**
-   - Interactive charts
-   - Real-time metrics
-   - Custom technical indicators
 
 ## 🚀 Getting Started
 
@@ -111,26 +83,6 @@ streamlit run app.py
 - NLP: nltk, textblob, vaderSentiment
 - Web: streamlit
 
-## 🎯 Future Enhancements
-
-1. **Technical Improvements**
-   - Advanced ML model integration
-   - Real-time sentiment analysis
-   - Enhanced visualization options
-
-2. **Feature Additions**
-   - Portfolio optimization
-   - Risk management tools
-   - Custom technical indicators
-
-3. **Performance Optimization**
-   - Caching mechanisms
-   - Parallel processing
-   - API rate limiting
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📝 Notes
 
