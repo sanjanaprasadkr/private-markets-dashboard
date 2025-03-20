@@ -272,7 +272,7 @@ def main():
     
     # Add a refresh button
     if st.sidebar.button("Refresh Data"):
-        st.experimental_rerun()
+        st.rerun()
     
     # Main content
     df = get_stock_data(symbol, period)
