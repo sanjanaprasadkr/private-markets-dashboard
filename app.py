@@ -76,6 +76,10 @@ def get_stock_data(symbol, period):
     max_retries = 3
     retry_delay = 2  # seconds
     
+    if not symbol or symbol.strip() == "":
+        st.error("Please enter a valid stock symbol")
+        return None
+    
     for attempt in range(max_retries):
         try:
             # Add a small delay between retries
@@ -85,11 +89,28 @@ def get_stock_data(symbol, period):
             # Create a new Ticker instance for each attempt
             ticker = yf.Ticker(symbol)
             
-            # Get historical data
-            df = ticker.history(period=period)
+            # Get historical data with specific parameters
+            df = ticker.history(period=period, interval="1d", prepost=False)
             
             if df is None or df.empty:
                 st.error(f"No data available for {symbol}. Please try a different symbol or time period.")
+                return None
+            
+            # Basic data validation
+            if len(df) < 10:
+                st.error(f"Insufficient data for {symbol}")
+                return None
+            
+            # Check for missing values
+            if df.isnull().any().any():
+                # Forward fill missing values
+                df = df.fillna(method='ffill')
+                # Backward fill any remaining NaN values
+                df = df.fillna(method='bfill')
+            
+            # Verify data quality
+            if df['Close'].isnull().any():
+                st.error(f"Data quality issues detected for {symbol}")
                 return None
                 
             # Add technical indicators
