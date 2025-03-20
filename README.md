@@ -38,22 +38,6 @@ A financial analytics platform leveraging machine learning, technical analysis, 
 - **API Integration**: yfinance
 - **Natural Language Processing**: NLTK, TextBlob, VADER
 
-## 🛠️ Technical Implementation
-
-### Architecture
-```
-├── Data Collection Layer
-│   ├── Real-time market data fetching
-│   └── Data validation and cleaning
-├── Analysis Layer
-│   ├── Technical indicators
-│   ├── Machine learning models
-│   └── Sentiment analysis
-└── Presentation Layer
-    ├── Interactive visualizations
-    └── Real-time metrics
-```
-
 ### Key Components
 1. **Data Pipeline**
    - Efficient data fetching with retry mechanisms
