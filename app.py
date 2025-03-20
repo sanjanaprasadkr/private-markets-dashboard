@@ -71,55 +71,44 @@ def create_sample_data():
     
     return df
 
-def get_stock_data(symbol, period="1y"):
-    """Fetch stock data using yfinance with improved error handling"""
-    try:
-        # Add retry mechanism
-        max_retries = 3
-        retry_delay = 2
-        
-        for attempt in range(max_retries):
-            try:
-                # Create Ticker object
-                ticker = yf.Ticker(symbol)
+def get_stock_data(symbol, period):
+    """Fetch stock data with retry logic and better error handling"""
+    max_retries = 3
+    retry_delay = 2  # seconds
+    
+    for attempt in range(max_retries):
+        try:
+            # Add a small delay between retries
+            if attempt > 0:
+                time.sleep(retry_delay)
+            
+            # Create a new Ticker instance for each attempt
+            ticker = yf.Ticker(symbol)
+            
+            # Get historical data
+            df = ticker.history(period=period)
+            
+            if df is None or df.empty:
+                st.error(f"No data available for {symbol}. Please try a different symbol or time period.")
+                return None
                 
-                # Fetch historical data first
-                df = ticker.history(period=period, interval="1d", prepost=False)
-                
-                if df.empty:
-                    st.error(f"No data available for {symbol}")
-                    return None
-                
-                # Basic data validation
-                if len(df) < 10:
-                    st.error(f"Insufficient data for {symbol}")
-                    return None
-                
-                # Check for missing values
-                if df.isnull().any().any():
-                    # Forward fill missing values
-                    df = df.fillna(method='ffill')
-                    # Backward fill any remaining NaN values
-                    df = df.fillna(method='bfill')
-                
-                # Verify data quality
-                if df['Close'].isnull().any():
-                    st.error(f"Data quality issues detected for {symbol}")
-                    return None
-                
-                return df
-                
-            except Exception as e:
-                if attempt < max_retries - 1:
-                    time.sleep(retry_delay)
-                    continue
-                else:
-                    st.error(f"Error fetching data for {symbol}: {str(e)}")
-                    return None
-                    
-    except Exception as e:
-        st.error(f"Unexpected error: {str(e)}")
-        return None
+            # Add technical indicators
+            df['SMA_20'] = ta.trend.sma_indicator(df['Close'], window=20)
+            df['SMA_50'] = ta.trend.sma_indicator(df['Close'], window=50)
+            df['RSI'] = ta.momentum.rsi(df['Close'], window=14)
+            df['MACD'] = ta.trend.macd_diff(df['Close'])
+            
+            return df
+            
+        except Exception as e:
+            if attempt < max_retries - 1:
+                st.warning(f"Attempt {attempt + 1} failed: {str(e)}. Retrying...")
+                continue
+            else:
+                st.error(f"Failed to fetch data for {symbol} after {max_retries} attempts. Error: {str(e)}")
+                return None
+    
+    return None
 
 def calculate_technical_indicators(df):
     """Calculate technical indicators for financial analysis"""
