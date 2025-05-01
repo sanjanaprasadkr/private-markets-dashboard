@@ -4,7 +4,7 @@ Check out my project! -> https://app-markets-dashboard-swym4acvq5mfrakmdbagjp.st
 
 A financial analytics platform leveraging machine learning, technical analysis, and sentiment analysis to provide comprehensive market insights. Built with Python and modern data science tools.
 
-## 🚀 Key Features
+## Key Features
 
 ### Advanced Analytics
 - **Real-time Market Data Processing**: Efficient data pipeline using yfinance API
@@ -44,7 +44,7 @@ A financial analytics platform leveraging machine learning, technical analysis, 
 - **API Integration**: yfinance
 - **Natural Language Processing**: NLTK, TextBlob, VADER
 
-## 🚀 Getting Started
+## Getting Started
 
 1. Clone the repository:
 ```bash
@@ -64,14 +64,14 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## 📊 Performance Metrics
+## Performance Metrics
 
 - Real-time data processing
 - Efficient memory management
 - Optimized ML model inference
 - Responsive UI updates
 
-## 🔧 Development
+## Development
 
 ### Prerequisites
 - Python 3.12+
@@ -86,13 +86,13 @@ streamlit run app.py
 - Web: streamlit
 
 
-## 📝 Notes
+## Notes
 
 - Built for educational and research purposes
 - Requires stable internet connection for real-time data
 - Optimized for desktop viewing
 
-## 🚀 Deployment
+## Deployment
 
 ### Streamlit Cloud (Recommended)
 1. Push your code to GitHub
